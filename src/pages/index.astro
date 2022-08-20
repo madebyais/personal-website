@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const programmingLanguages: Array<string> = [
+	"Typescript", "Javascript", "ReactJS", "NextJS", "Golang", "Python", "Shell", "HTML5", "CSS3", "TailwindCSS"
+]
+
+const cloudNatives: Array<string> = [
+	"Kubernetes", "CI/CD", "Prometheus", "Loki", "Jaeger", "Grafana", "Vault", "Terraform", "Ansible"
+]
+
+const databases: Array<string> = [
+"PostgreSQL", "MySQL", "MongoDB", "Redis", "RabbitMQ", "Kafka", "OpenSearch"
+]
+---
+
+<style>
+	.container-1000 { max-width: 1000px !important }
+</style>
+
+<BaseLayout>
+	<div class="container-1000 mx-auto space-y-5">
+		<div class="p-5 md:px-0 space-y-2 text-sm">
+			<div class="mb-5"><img src="/images/profile-pic.webp" class="rounded-full w-32" /></div>
+			<div class="font-bold text-lg">Faris</div>
+			<div class="flex items-center space-x-3">
+				<div>People called me Ais.</div>
+				<div>Based in Jakarta, Indonesia.</div>
+			</div>
+			<div>A software engineer with more than <span class="font-bold">11 years of experience</span> in tech-startups.</div>
+		</div>
+
+		<div class="px-5 md:px-0 flex items-center space-x-5 mt-5 text-sm">
+			<div>Co-Founder at <a href="https://monolog.id" target="_blank" class="font-bold">Monolog</a>.</div>
+			<div>Co-Founder at <a href="https://threeengineers.id" target="_blank" class="font-bold">Three Engineers</a>.</div>
+			<div>DevOps Lead at <a href="https://gotoko.co.id" target="_blank" class="font-bold">GOTOKO</a>.</div>
+		</div>
+
+		<div class="py-10 px-5 md:px-0 flex flex-wrap items-center gap-2 text-xs">
+			{programmingLanguages.map(item => (
+				<div class="px-4 py-2 bg-gray-800 rounded-full font-semibold text-gray-400">{item}</div>
+			))}
+
+			{cloudNatives.map(item => (
+				<div class="px-4 py-2 bg-gray-800 rounded-full font-semibold text-gray-400">{item}</div>
+			))}
+
+			{databases.map(item => (
+				<div class="px-4 py-2 bg-gray-800 rounded-full font-semibold text-gray-400">{item}</div>
+			))}
+		</div>
+
+		<div class="px-5 pb-10 md:px-0">
+			<div class="mb-5">If you have any ideas or want to solve big problems using web technologies, let's collaborate!</div>
+			<a href="mailto:faris@monolog.id" class="px-4 py-2 bg-blue-700 rounded-full font-semibold text-sm">Send me an e-mail</a>
+		</div>
+	</div>
+</BaseLayout>
